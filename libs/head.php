@@ -46,6 +46,21 @@
 
 <!--favicons-->
 <link rel="icon" href="<?php echo APP_URL; ?>common/img/icon/favicon.ico" type="image/vnd.microsoft.icon">
+<link rel="stylesheet/less" type="text/css" href="<?php echo APP_URL; ?>common/css/style.less" />
+<script>
+  less = {
+    env: "development",
+    async: false,
+    fileAsync: false,
+    poll: 1000,
+    functions: {},
+    dumpLineNumbers: "comments",
+    relativeUrls: false,
+    rootpath: ":/a.com/"
+  };
+</script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.9.0/less.min.js" ></script>
+<script>less.watch();</script>
 
 <?php
 	//wp_head();
