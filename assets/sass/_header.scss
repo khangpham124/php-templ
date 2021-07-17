@@ -1,0 +1,231 @@
+.header {
+  padding: 20px 0;
+}
+
+.img-logo {
+  height: 80px;
+}
+
+#header {
+  padding: 20px 50px;
+  background: rgba(0, 0, 0, 1);
+  width: 100%;
+  .img-logo {
+    height: 70px;
+    @media (max-width: 767px) {
+      height: 35px;
+    }
+  }
+  z-index: 1000;
+  @media (max-width: 767px) {
+    padding: 10px 15px;
+  }
+  .nav-menu-button {
+    position: relative;
+    float: right;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    .bar1,
+    .bar2,
+    .bar3 {
+      width: 30px;
+      height: 3px;
+      background-color: $color-violet;
+      margin: 8px auto;
+      transition: 0.4s;
+    }
+    &.active {
+      .bar1,
+      .bar2,
+      .bar3 {
+        background-color: $color-gold;
+      }
+      .bar1 {
+        -webkit-transform: rotate(-45deg) translate(-5px, 10px);
+        transform: rotate(-45deg) translate(-5px, 10px);
+      }
+      .bar2 {
+        opacity: 0;
+      }
+      .bar3 {
+        -webkit-transform: rotate(45deg) translate(-9px, -8px);
+        transform: rotate(45deg) translate(-6px, -9px);
+      }
+    }
+  }
+}
+
+// .fix-header {
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   background: rgba(149, 86, 155, 0.9);
+// }
+
+.nav-menu {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  & > li {
+    position: relative;
+  }
+  &__sub {
+    display: none;
+    position: absolute;
+    width: 450%;
+    background-color: $color-white;
+    top: 50px;
+    padding: 20px;
+    right: 0;
+    z-index: 500;
+    @media (max-width: 767px) {
+      width: 100%;
+      padding: 20px 0;
+    }
+    li {
+      padding: 15px 20px;
+      a {
+        font-size: 14px;
+        font-weight: bold;
+        text-decoration: none;
+        color: $color-black;
+        &:hover {
+          color: $color-red;
+        }
+      }
+    }
+  }
+  @media (max-width: 767px) {
+    display: none;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    padding: 110px 25px 25px;
+    z-index: 900;
+    position: fixed;
+    background: $color-violet;
+  }
+}
+.nav-link {
+  position: relative;
+  color: $color-white;
+  text-decoration: none;
+  padding: 20px;
+  text-align: left;
+  text-transform: uppercase;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 16px;
+  line-height: 19px;
+  @include lt-spacing(50);
+  transition: ease-in-out 500ms;
+  &:hover {
+    color: $color-violet;
+  }
+}
+
+#top .nav-menu li:nth-child(1) .nav-link {
+  color: $color-violet;
+  @media (max-width: 767px) {
+    color: $color-yellow;
+  }
+}
+
+.lang-menu {
+  margin-left: 20px;
+  @media (max-width: 767px) {
+    margin-left: 10px;
+  }
+  li {
+    padding: 0 10px;
+    a {
+      color: $color-white;
+      line-height: 1;
+    }
+    &:last-child {
+      border-left: 1px solid $color-black;
+    }
+    &.active {
+      a {
+        font-weight: bold;
+        text-decoration: underline;
+        color: $color-violet;
+      }
+    }
+  }
+}
+
+.header-link {
+  color: $color-yellow;
+  margin-left: 20px;
+  font-size: 30px;
+  position: relative;
+  &:hover {
+    opacity: 0.6;
+  }
+  .js-numbCart {
+    font-size: 12px;
+    display: inline-block;
+    border-radius: 100%;
+    background: $color-violet;
+    color: $color-white;
+    width: 18px;
+    height: 18px;
+    text-align: center;
+    line-height: 18px;
+    position: absolute;
+    top: 0;
+    right: -15px;
+  }
+  @media (max-width: 767px) {
+    margin: 0 10px;
+  }
+}
+
+.nav-bar {
+  &--right {
+    width: 75%;
+    justify-content: flex-end;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  #header {
+    padding: 20px;
+    .img-logo {
+      height: 50px;
+      width: auto;
+    }
+  }
+  .nav-link {
+    font-size: 13px;
+    padding: 15px 10px;
+  }
+  .header-link {
+    font-size: 25px;
+    margin-left: 15px;
+  }
+}
+
+@media (max-width: 767px) {
+  .nav-link {
+    display: block;
+    padding-left: 0px;
+    padding-bottom: 15px;
+    padding-top: 10px;
+    &.active {
+      &:after {
+        bottom: 5px;
+        left: 0;
+      }
+    }
+  }
+  .nav-menu-button {
+    display: block;
+    z-index: 1000;
+  }
+}
